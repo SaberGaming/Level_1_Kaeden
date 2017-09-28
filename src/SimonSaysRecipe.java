@@ -22,14 +22,16 @@ public class SimonSaysRecipe extends KeyAdapter {
 	private int tries = 0;
 	private int simonSays = 0;
 	Date timeAtStart;
+	private Random yn = new Random(2);
 
 	private void makeAlbum() {
 		// 2. add 4 images which match keyboard keys like this: images.put(new
 		// Integer(KeyEvent.VK_UP), "image.jpg");
-		images.put(new Integer(KeyEvent.VK_UP), "K.jpg");
-		images.put(new Integer(KeyEvent.VK_UP), "A.jpg");
-		images.put(new Integer(KeyEvent.VK_UP), "L.jpg");
-		images.put(new Integer(KeyEvent.VK_UP), "Z.jpg");
+		images.put(new Integer(KeyEvent.VK_K), "Z.jpg");
+		images.put(new Integer(KeyEvent.VK_A), "Z.jpg");
+		images.put(new Integer(KeyEvent.VK_Z), "Z.jpg");
+		images.put(new Integer(KeyEvent.VK_L), "Z.jpg");
+
 		// 3. Tell the user to "Press the matching key when 'Simon says'
 		// otherwise press a different key"
 		JOptionPane.showMessageDialog(null,
@@ -45,6 +47,10 @@ public class SimonSaysRecipe extends KeyAdapter {
 		int points = 0;
 		// 17. if the keyCode matches the imageIndex and "Simon says..."
 		// increase their score
+		// if (keyCode == imgaeIndex && yn == 0) {
+
+		// }
+
 		// 18. if the keyCode doesn't match the imageIndex and "Simon didn't
 		// say..." increase their score
 		// 19. Use the speak method to tell the user if they were correct or not
@@ -60,6 +66,8 @@ public class SimonSaysRecipe extends KeyAdapter {
 		billy.dispose();
 		// 12. call the method to show an image
 		showImage();
+		System.out.println(yn);
+
 	}
 
 	private void showImage() {
